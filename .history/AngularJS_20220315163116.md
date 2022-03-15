@@ -1,0 +1,4 @@
+## 面试
+- angular js中`control`间通信最好使用广播的方式
+- AngularJS中的服务实质上是单例对象
+

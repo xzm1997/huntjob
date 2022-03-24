@@ -31,13 +31,3 @@
 - 简而言之，它负责异步 `I/O` 操作 —— 主要是与系统磁盘和网络的交互。它主要由诸如 `fs`（`I/O` 密集）或 `crypto`（CPU 密集）等模块使用。工作池用 `libuv` 实现，当 `Node` 需要在 JavaScript 和 C++ 之间进行内部通信时，会导致轻微的延迟，但这几乎不可察觉。
 
 **参考**：<a src = "https://segmentfault.com/a/1190000021462627">一文搞懂 Node.js 中的多线程和多进程</a>
-
-## JavaScript计时器
-- `Timer` 函数是由浏览器实现的，不同浏览器的实现方式会有所不同。同时 `Timer` 也是由 `Node.js` 运行时本身实现的。
-- 在 `Node` 中，计时器是 `global` 对象的一部分，该对象的行为类似于浏览器的 `window` 。你可以在 `Node` 的源代码中找到它的实现。
-
-## V8 JavaScript 引擎
-- `V8` 提供了 JavaScript 执行的运行时环境。 `DOM` 和其他 `Web` 平台 `API` 由浏览器提供。
-- JavaScript 引擎独立于它所在的浏览器。 这个关键特性促成了 Node.js 的兴起。
-### 编译
-- JavaScript 通常被认为是一门解释型语言，但是现代的 JavaScript 引擎不再只是解释 JavaScript，它们会编译它。JavaScript 由 `V8` 在内部使用即时 `JIT` 编译以加快执行速度。

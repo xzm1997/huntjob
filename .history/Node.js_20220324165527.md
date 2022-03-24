@@ -40,4 +40,4 @@
 - `V8` 提供了 JavaScript 执行的运行时环境。 `DOM` 和其他 `Web` 平台 `API` 由浏览器提供。
 - JavaScript 引擎独立于它所在的浏览器。 这个关键特性促成了 Node.js 的兴起。
 ### 编译
-- JavaScript 通常被认为是一门解释型语言，但是现代的 JavaScript 引擎不再只是解释 JavaScript，它们会编译它。JavaScript 由 `V8` 在内部使用即时 `JIT` 编译以加快执行速度。
+- 

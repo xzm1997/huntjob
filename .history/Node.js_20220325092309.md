@@ -71,4 +71,4 @@
     - `full-codegen`：简单且快速的编译器，可以生成简单但相对较慢的机器码
     - `Grankshaft`：较为复杂的`JIT`编译器，可以生成高度优化的机器码
 ![字节码编译器](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%9A%84v5.6%E7%89%88%E4%B9%8B%E5%89%8D%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
-- 参考: <a src = "https://juejin.cn/post/6844903953981767688">JavaScript：V8编译过程</a>
+- 参考: <a></a>

@@ -66,9 +66,4 @@
     - 有的ES6语法现在浏览器还不支持，需要将ES6语法转成ES5语法，这一个过程就要借助`Babel`来实现
     - `Babel`是一个JavaScript编译器，分了三个阶段：**解析**、**转译**、**生成**。将ES6源码解析成`AST`，再将ES6语法的`AST`转成ES5的`AST`，最后利用它来生成ES5源代码
 - **生成字节码**
-  - 在将JavaScript源代码转换成`AST`后，随后需要将`AST`转换成字节码。
-  - 编译器
-    - `full-codegen`：简单且快速的编译器，可以生成简单但相对较慢的机器码
-    - `Grankshaft`：较为复杂的`JIT`编译器，可以生成高度优化的机器码
-![字节码编译器](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%9A%84v5.6%E7%89%88%E4%B9%8B%E5%89%8D%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
-- 参考: <a src = "https://juejin.cn/post/6844903953981767688">JavaScript：V8编译过程</a>
+  - 

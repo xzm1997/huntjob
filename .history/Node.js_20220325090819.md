@@ -57,18 +57,4 @@
   - `Ignition`： `interpreter`，**解释器**，将`AST`转换成**字节码**（`Bytecode`），解析执行字节码，同时也收集TurboFan优化编译所需要的信息
   - `TurboFan：compiler`，`JIT`**编译器**，利用`Ignitio`所收集的类型信息，将`Bytecode`转换为优化的机器码
   - `Orinoco`：`garbage collector`，**垃圾回收模块**，负责将程序不再需要的内存空间回收
-![V8](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.jpg)
-- **生成抽象语法树**
-  - `V8`引擎首先是通过编译器（`parse`）将源代码解析抽象语法树（`AST`），生成`AST`分为两个阶段，一是**词法分析**，二是**语法分析**
-    - **词法分析**：将源代码拆成最小的、不可再分的词法单元（`token`）。
-    - **语法分析**：这个过程是将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树，这个树被称为抽象语法树（`AST`）。
-  - `Babel`
-    - 有的ES6语法现在浏览器还不支持，需要将ES6语法转成ES5语法，这一个过程就要借助`Babel`来实现
-    - `Babel`是一个JavaScript编译器，分了三个阶段：**解析**、**转译**、**生成**。将ES6源码解析成`AST`，再将ES6语法的`AST`转成ES5的`AST`，最后利用它来生成ES5源代码
-- **生成字节码**
-  - 在将JavaScript源代码转换成`AST`后，随后需要将`AST`转换成字节码。
-  - 编译器
-    - `full-codegen`：简单且快速的编译器，可以生成简单但相对较慢的机器码
-    - `Grankshaft`：较为复杂的`JIT`编译器，可以生成高度优化的机器码
-![字节码编译器](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%9A%84v5.6%E7%89%88%E4%B9%8B%E5%89%8D%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
-- 参考: <a src = "https://juejin.cn/post/6844903953981767688">JavaScript：V8编译过程</a>
+![V8]()

@@ -39,7 +39,7 @@
 ## V8 JavaScript 引擎
 - `V8` 提供了 JavaScript 执行的运行时环境。 `DOM` 和其他 `Web` 平台 `API` 由浏览器提供。
 - JavaScript 引擎独立于它所在的浏览器。 这个关键特性促成了 Node.js 的兴起。
-- `V8`是一个开源项目，在性能方面要优于其他JavaScript引擎，Chrome 使用的`V8`引擎，浏览器市场占有率很大，并且`Node`也是基于`V8`研发的，`V8`也支持众多的操作系统和硬件架构，`V8`具有代表性，`V8`自08年发布以来，性能一直在稳步的提高
+- 
 ### 编译
 - JavaScript 通常被认为是一门**解释型语言**，但是现代的 JavaScript 引擎不再只是解释 JavaScript，它们会编译它。JavaScript 由 `V8` 在内部使用即时 `JIT` 编译以加快执行速度。
 - Java的处理过程加入了`JIT`的概念，`JIT`可以将字节码转为本地代码然后执行，会提高执行效率，`JIT`主要是起到**优化性能**的作用。很多JavaScript引擎也用到了。
@@ -51,24 +51,3 @@
   - **JIT工具**：将字节码或者抽象语法树转换成本地代码，优化用
   - **垃圾回收器和分析工具**（profiler）：负责垃圾回收和收集引擎中的信息，帮助改善引擎的性能和功效
 ![编译过程](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/JavaScript%E5%BC%95%E6%93%8E%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
-### `V8` 执行过程
-- `模块`
-  - `parse`：负责将JavaScript源代码转换成**抽象语法树**（`AST`）
-  - `Ignition`： `interpreter`，**解释器**，将`AST`转换成**字节码**（`Bytecode`），解析执行字节码，同时也收集TurboFan优化编译所需要的信息
-  - `TurboFan：compiler`，`JIT`**编译器**，利用`Ignitio`所收集的类型信息，将`Bytecode`转换为优化的机器码
-  - `Orinoco`：`garbage collector`，**垃圾回收模块**，负责将程序不再需要的内存空间回收
-![V8](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.jpg)
-- **生成抽象语法树**
-  - `V8`引擎首先是通过编译器（`parse`）将源代码解析抽象语法树（`AST`），生成`AST`分为两个阶段，一是**词法分析**，二是**语法分析**
-    - **词法分析**：将源代码拆成最小的、不可再分的词法单元（`token`）。
-    - **语法分析**：这个过程是将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树，这个树被称为抽象语法树（`AST`）。
-  - `Babel`
-    - 有的ES6语法现在浏览器还不支持，需要将ES6语法转成ES5语法，这一个过程就要借助`Babel`来实现
-    - `Babel`是一个JavaScript编译器，分了三个阶段：**解析**、**转译**、**生成**。将ES6源码解析成`AST`，再将ES6语法的`AST`转成ES5的`AST`，最后利用它来生成ES5源代码
-- **生成字节码**
-  - 在将JavaScript源代码转换成`AST`后，随后需要将`AST`转换成字节码。
-  - 编译器
-    - `full-codegen`：简单且快速的编译器，可以生成简单但相对较慢的机器码
-    - `Grankshaft`：较为复杂的`JIT`编译器，可以生成高度优化的机器码
-![字节码编译器](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%9A%84v5.6%E7%89%88%E4%B9%8B%E5%89%8D%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
-- 参考: <a src = "https://juejin.cn/post/6844903953981767688">JavaScript：V8编译过程</a>

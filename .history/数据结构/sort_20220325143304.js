@@ -1,14 +1,14 @@
 function bubbleSort(arr) {
   // 冒泡排序
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            }
+        }
     }
-  }
 }
 
 function selectSort(arr) {
@@ -60,27 +60,7 @@ function shellSort(arr) {
   }
 }
 
-function quickSort(arr) {
-  // 快速排序
-  if (arr.length === 0) {
-    return [];
-  }
-  let baseIndex = Math.floor(arr.length / 2);
-  let base = arr.splice(baseIndex, 1)[0];
-  let left = [];
-  let right = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < base) {
-      left.push(arr[i]);
-    } else {
-      right.push(arr[i]);
-    }
-  }
 
-  return quickSort(left).concat(base, quickSort(right));
-}
-
-
-var arr = [5, 1, 3, 17, 10, 12];
-var res = quickSort(arr);
-console.log(res);
+var arr = [5, 1, 3, 9, 7, 10];
+shellSort(arr);
+console.log(arr);

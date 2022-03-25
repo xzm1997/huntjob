@@ -218,41 +218,9 @@ function bucketSort(array, num) {
   return result;
 }
 
-function radixSort(arr, maxDigit) {
-  /*
-  * 基数排序适用于：
-  *  (1)数据范围较小，建议在小于1000
-  *  (2)每个数值都要大于等于0
-  * @param  arr 待排序数组
-  * @param  maxDigit 最大位数
-  */
-  var mod = 10;
-  var dev = 1;
-  var counter = [];
-  console.time('基数排序耗时');
-  for (var i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
-      for(var j = 0; j < arr.length; j++) {
-          var bucket = parseInt((arr[j] % mod) / dev);
-          if(counter[bucket]== null) {
-              counter[bucket] = [];
-          }
-          counter[bucket].push(arr[j]);
-      }
-      var pos = 0;
-      for(var j = 0; j < counter.length; j++) {
-          var value = null;
-          if(counter[j]!=null) {
-              while ((value = counter[j].shift()) != null) {
-                    arr[pos++] = value;
-              }
-        }
-      }
-  }
-  console.timeEnd('基数排序耗时');
-  return arr;
-}
+
 
 var arr = [2, 2, 3, 8, 7, 1, 2, 2, 2, 7, 3, 9, 8, 2, 1, 4, 2, 4, 6, 9, 2];
 // var res = heapSort(arr);
-var res = radixSort(arr,7)
+var res = bucketSort(arr,7)
 console.log(res);

@@ -220,12 +220,12 @@ function bucketSort(array, num) {
 
 function radixSort(arr, maxDigit) {
   /*
-  * 基数排序适用于：
-  *  (1)数据范围较小，建议在小于1000
-  *  (2)每个数值都要大于等于0
-  * @param  arr 待排序数组
-  * @param  maxDigit 最大位数
-  */
+ * 基数排序适用于：
+ *  (1)数据范围较小，建议在小于1000
+ *  (2)每个数值都要大于等于0
+ * @param  arr 待排序数组
+ * @param  maxDigit 最大位数
+ */
   var mod = 10;
   var dev = 1;
   var counter = [];
@@ -254,5 +254,5 @@ function radixSort(arr, maxDigit) {
 
 var arr = [2, 2, 3, 8, 7, 1, 2, 2, 2, 7, 3, 9, 8, 2, 1, 4, 2, 4, 6, 9, 2];
 // var res = heapSort(arr);
-var res = radixSort(arr,7)
+var res = bucketSort(arr,7)
 console.log(res);

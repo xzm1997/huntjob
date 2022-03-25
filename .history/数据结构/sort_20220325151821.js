@@ -113,7 +113,7 @@ function quickSort(arr) {
 }
 
 function heapSort(array) {
-  // console.time('堆排序耗时');
+  console.time('堆排序耗时');
   function heapify(arr, x, len) {
     /*方法说明：维护堆的性质
     @param  arr 数组
@@ -158,101 +158,6 @@ function heapSort(array) {
   }
 }
 
-function countingSort(array) {
-  var len = array.length,
-      B = [],
-      C = [],
-      min = max = array[0];
-  // console.time('计数排序耗时');
-  for (var i = 0; i < len; i++) {
-      min = min <= array[i] ? min : array[i];
-      max = max >= array[i] ? max : array[i];
-      C[array[i]] = C[array[i]] ? C[array[i]] + 1 : 1;
-  }
-  for (var j = min; j < max; j++) {
-      C[j + 1] = (C[j + 1] || 0) + (C[j] || 0);
-  }
-  for (var k = len - 1; k >= 0; k--) {
-      B[C[array[k]] - 1] = array[k];
-      C[array[k]]--;
-  }
-  // console.timeEnd('计数排序耗时');
-  return B;
-}
-
-
-function bucketSort(array, num) {
-  /*方法说明：桶排序
-  @param  array 数组
-  @param  num   桶的数量*/
-  if (array.length <= 1) {
-      return array;
-  }
-  var len = array.length, buckets = [], result = [], min = max = array[0], regex = '/^[1-9]+[0-9]*$/', space, n = 0;
-  num = num || ((num > 1 && regex.test(num)) ? num : 10);
-  console.time('桶排序耗时');
-  for (var i = 1; i < len; i++) {
-      min = min <= array[i] ? min : array[i];
-      max = max >= array[i] ? max : array[i];
-  }
-  space = (max - min + 1) / num;
-  for (var j = 0; j < len; j++) {
-      var index = Math.floor((array[j] - min) / space);
-      if (buckets[index]) {   //  非空桶，插入排序
-          var k = buckets[index].length - 1;
-          while (k >= 0 && buckets[index][k] > array[j]) {
-              buckets[index][k + 1] = buckets[index][k];
-              k--;
-          }
-          buckets[index][k + 1] = array[j];
-      } else {    //空桶，初始化
-          buckets[index] = [];
-          buckets[index].push(array[j]);
-      }
-  }
-  while (n < num) {
-      result = result.concat(buckets[n]);
-      n++;
-  }
-  console.timeEnd('桶排序耗时');
-  return result;
-}
-
-function radixSort(arr, maxDigit) {
-  /*
-  * 基数排序适用于：
-  *  (1)数据范围较小，建议在小于1000
-  *  (2)每个数值都要大于等于0
-  * @param  arr 待排序数组
-  * @param  maxDigit 最大位数
-  */
-  var mod = 10;
-  var dev = 1;
-  var counter = [];
-  console.time('基数排序耗时');
-  for (var i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
-      for(var j = 0; j < arr.length; j++) {
-          var bucket = parseInt((arr[j] % mod) / dev);
-          if(counter[bucket]== null) {
-              counter[bucket] = [];
-          }
-          counter[bucket].push(arr[j]);
-      }
-      var pos = 0;
-      for(var j = 0; j < counter.length; j++) {
-          var value = null;
-          if(counter[j]!=null) {
-              while ((value = counter[j].shift()) != null) {
-                    arr[pos++] = value;
-              }
-        }
-      }
-  }
-  console.timeEnd('基数排序耗时');
-  return arr;
-}
-
-var arr = [2, 2, 3, 8, 7, 1, 2, 2, 2, 7, 3, 9, 8, 2, 1, 4, 2, 4, 6, 9, 2];
-// var res = heapSort(arr);
-var res = radixSort(arr,7)
+var arr = [5, 1, 3, 127, 101, 12];
+var res = heapSort(arr);
 console.log(res);

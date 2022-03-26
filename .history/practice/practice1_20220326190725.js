@@ -1,4 +1,5 @@
-// "use strict";        // 严格模式
+"use strict";
+
 console.log("JS for practice.");
 
 (function() {

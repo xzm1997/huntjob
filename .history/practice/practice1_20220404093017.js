@@ -3,4 +3,4 @@ console.log("JS for practice.");
 
 (function() {
     console.log(1)
-}())
+})

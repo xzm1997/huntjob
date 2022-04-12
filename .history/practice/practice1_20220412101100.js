@@ -1,5 +1,5 @@
 // "use strict";        // 严格模式
-console.log("---- JS for practice. ----");
+console.log("JS for practice.");
 
 function fn(value){
     console.log(arguments instanceof Array);
@@ -8,4 +8,4 @@ function fn(value){
     var arr = [...arguments];
     console.log(arr);
 }
-fn(10, 2,3);
+fn(1,2,3);

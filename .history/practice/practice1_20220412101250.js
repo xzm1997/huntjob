@@ -8,4 +8,4 @@ function fn(value){
     var arr = [...arguments];
     console.log(arr);
 }
-fn(10, 2,3);
+fn(2,3);

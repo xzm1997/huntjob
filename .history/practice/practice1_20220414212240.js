@@ -9,6 +9,6 @@ var o = function() {
 var po = new o();
 
 o.prototype.max = function() {
-    console.log(this.a, b);
+    console.log(this.a, b, c);
 }
 var po1 = po.max();

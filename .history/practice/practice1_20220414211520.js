@@ -1,14 +1,10 @@
 // "use strict";        // 严格模式
 console.log("---- JS for practice. ----");
 
-var o = function() {
+function f() {
     this.a = 1;
     b = 2;
-}
-
-var po = new o();
-
-o.prototype.max = function() {
     console.log(this.a, b);
 }
-var po1 = po.max();
+
+var fn = new f();

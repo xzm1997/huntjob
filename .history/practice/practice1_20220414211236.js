@@ -4,7 +4,7 @@ console.log("---- JS for practice. ----");
 var o = function() {
     this.a = 1;
     b = 2;
-    console.log(this.a, b);
+    console.log(a);
 }
 
 // console.log(o.a, o.b);

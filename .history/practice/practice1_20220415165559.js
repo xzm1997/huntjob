@@ -3,13 +3,13 @@ console.log("---- JS for practice. ----");
 
 function quickSort(arr) {
   if (arr.length === 0) return [];
-  let baseIndex = Math.floor(arr.length / 2);;
-  let base = arr.splice(baseIndex, 1)[0];
+  let baseIndex = Math.floor(arr.length / 2);
+  let base = arr[baseIndex];
   let left = [], right = [];
-  arr.forEach((item) => {
-    if (item < base) left.push(item);
-    else right.push(item);
-  })
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] < base) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
   return quickSort(left).concat(base, quickSort(right));
 }
 

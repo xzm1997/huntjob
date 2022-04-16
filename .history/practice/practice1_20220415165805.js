@@ -3,17 +3,18 @@ console.log("---- JS for practice. ----");
 
 function quickSort(arr) {
   if (arr.length === 0) return [];
-  let baseIndex = Math.floor(arr.length / 2);;
+  let baseIndex = Math.floor(arr.length / 2);
   let base = arr.splice(baseIndex, 1)[0];
+  console.log(baseIndex, base);
   let left = [], right = [];
-  arr.forEach((item) => {
-    if (item < base) left.push(item);
-    else right.push(item);
-  })
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] < base) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
   return quickSort(left).concat(base, quickSort(right));
 }
 
 arr = [1,7,23,19,65,13,12,54,87,2];
-arr = quickSort(arr);
+// arr = quickSort(arr);
 console.log(arr);
 

@@ -5,17 +5,14 @@ let p = new Promise((resolve, reject) => {
   console.log("Beginning!");
   let judge = Math.random()
   if (judge > 0.5) {
-    resolve(judge);
+    resolve();
   } else {
-    reject(judge);
+    reject();
   }
 })
 
-p.then((judge) => {
-  console.log("Judge is " + judge);
+p.then(() => {
   console.log("Resolved!");
-
-}, (judge) => {
-  console.log("Judge is " + judge);
+}, () => {
   console.log("Rejected!");
 })

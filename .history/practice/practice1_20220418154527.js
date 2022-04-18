@@ -11,11 +11,9 @@ let p = new Promise((resolve, reject) => {
   }
 })
 
-p.then((judge) => {
-  console.log("Judge is " + judge);
+p.then(() => {
   console.log("Resolved!");
-
-}, (judge) => {
-  console.log("Judge is " + judge);
+  
+}, () => {
   console.log("Rejected!");
 })

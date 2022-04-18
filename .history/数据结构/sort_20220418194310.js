@@ -74,9 +74,11 @@ function mergeSort(arr) {
       }
     }
   
-    while (left.length) result.push(left.shift());
+    while (left.length)
+        result.push(left.shift());
   
-    while (right.length) result.push(right.shift());
+    while (right.length)
+        result.push(right.shift());
     // console.timeEnd('归并排序耗时');
     return result;
   }

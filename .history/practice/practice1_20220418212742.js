@@ -31,20 +31,6 @@ class Promise {
       reject(error);
     }
   }
-  
-  then(onFulfilled, onRejected) {
-    if (this.status === FULFILLED) onFulfilled(this.value);
-    if (this.status === REJECTED) onRejected(this.reason);
-  }
-}
 
-const promise = new Promise((resolve, reject) => {
-  resolve('成功');
-}).then(
-  (data) => {
-    console.log('success', data)
-  },
-  (err) => {
-    console.log('failed', err)
-  }
-)
+  
+}

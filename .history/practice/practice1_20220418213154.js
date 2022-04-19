@@ -45,6 +45,6 @@ const promise = new Promise((resolve, reject) => {
     console.log('success', data)
   },
   (err) => {
-    console.log('failed', err)
+    console.log('faild', err)
   }
 )

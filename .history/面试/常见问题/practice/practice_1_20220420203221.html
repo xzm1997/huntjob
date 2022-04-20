@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid 三栏</title>
+  <title>Flex 三栏</title>
   <style>
     .content {
-      display:grid;
-      height: 400px;
-      grid-template-columns: 200px 2fr 200px;
-      grid-column-gap: 10px;
+      display:flex;
     }
     .middle {
+      flex:1 0 200px;
+      height:400px;
       background:lavenderblush;
     }
     .left {
+      order: -1;
+      flex: 0 1 200px;
       background:lemonchiffon;
-    }
-    .right {
-      background:lightcoral;
     }
   </style>
 </head>

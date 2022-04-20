@@ -4,39 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>双飞翼</title>
+  <title>圣杯</title>
   <style>
     .content {
-      float:left;
-      width:100%;
-    }
-    .middle {
-      background:lavender;
-      height:400px;
       margin-left: 210px;
       margin-right: 210px;
     }
+    .middle {
+      height: 400px;
+      background:lavenderblush;
+      float: left;
+      width: 100%;
+    }
     .left {
-      background: blue;
-      height:400px;
+      position:relative;
+      height: 400px;
+      background:chartreuse;
       width:200px;
-      float:left;
+      left:-210px;
       margin-left: -100%;
+      float:left;
     }
     .right {
       height: 400px;
-      background: chocolate;
+      background:hotpink;
       width:200px;
-      float:left;
-      margin-left: -200px
+      position:relative;
+      margin-left:-210px;
+      float:right;
+      right:-210px;
     }
   </style>
 </head>
 <body>
   <div class="content">
     <div class="middle"></div>
+    <div class="left"></div>
+    <div class="right"></div>
   </div>
-  <div class="left"></div>
-  <div class="right"></div>
 </body>
 </html>

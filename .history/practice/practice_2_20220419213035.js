@@ -1,0 +1,18 @@
+let input = [['A','B'], ['a','b'],['1','2']], res;
+
+let queue = (arr) => {
+    if (input.length === 0 || input[0].length === 0) return '';
+
+    const dfs = (arr) => {
+        
+    }
+}
+
+
+
+res = queue(input);
+
+console.log(res);
+
+let test = [1,2,3,4];
+

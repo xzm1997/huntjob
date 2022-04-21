@@ -6,7 +6,7 @@ let flatten = (arr) => {
 
   arr.forEach(item => {
     if (Array.isArray(item)) {
-      res.push(...flatten(item));
+      res.push()
     } else {
       res.push(item);
     }

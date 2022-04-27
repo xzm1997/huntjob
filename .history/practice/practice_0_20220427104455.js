@@ -3,7 +3,7 @@ const textReplace = (template, content) => {
   // const name = /\{\{defaultName\}\}/;
 
   const grade = new RegExp('{{defaultGrade}}');
-  const name = new RegExp('{{defaultName}}');
+  const name = new RegExp('defaultName');
 
   return template.replace(grade, content['defaultGrade']).replace(name, content['defaultName']);
 }

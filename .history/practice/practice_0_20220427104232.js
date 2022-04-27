@@ -1,9 +1,6 @@
 const textReplace = (template, content) => {
-  // const grade = /\{\{defaultGrade\}\}/;
-  // const name = /\{\{defaultName\}\}/;
-
-  const grade = new RegExp('{{defaultGrade}}');
-  const name = new RegExp('{{defaultName}}');
+  const grade = /\{\{defaultGrade\}\}/;
+  const name = /\{\{defaultName\}\}/;
 
   return template.replace(grade, content['defaultGrade']).replace(name, content['defaultName']);
 }
@@ -12,4 +9,4 @@ const textReplace = (template, content) => {
 var template = '我是一名{{defaultGrade}}学生，我的名字叫{{defaultName}}';
 var content = {defaultGrade:'初中', defaultName:'张三'};
 
-console.log(textReplace(template, content));
+console.log(content.key);

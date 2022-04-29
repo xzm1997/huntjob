@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue"/>
+        <button v-on:click="handleBtnClick">提交</button>
+        <ul>
+            <!-- <li v-for="item in list">{{item}}</li> -->
+            <todo-item v-bind:content="item" 
+                    v-bind:index="index"
+                    v-for="(item, index) in list"
+                    @delete="handleItemDelete"
+                >
+            </todo-item>
+        </ul>
+    </div>
+
+    <script>
+        // 组件化 全局
+        // Vue.component("TodoItem", {
+        //     props:['content'],
+        //     template:"<li>{{content}}</li>"
+        // })
+
+        var TodoItem = {
+            props: ['content', 'index'],
+            template:"<li v-on:click='handleItemClick'>{{content}}</li>",
+            methods: {
+                handleItemClick:function(index) {
+                    // alert(index);
+                    this.$emit("delete", this.index);
+                }
+            }
+        }
+
+        var app=new Vue({
+            el:'#app',
+            components: {
+                TodoItem:TodoItem
+            },
+            data:{
+                list:[
+                    "第一项的内容",
+                    "第二项的内容",
+                ],
+                inputValue:'',
+            },
+            methods:{
+                handleBtnClick: function() {
+                    if (this.inputValue === '') return;
+                    this.list.push(this.inputValue);
+                    this.inputValue='';
+                },
+                handleItemDelete: function(index) {
+                    // alert(index);
+                    this.list.splice(index, 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

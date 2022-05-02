@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper :option="swiperOption" :pagination="{ clickable: true }">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+      <swiper-slide v-for: "item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
@@ -15,8 +15,7 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
-        loop: true
+        pagination: '.swiper-pagination'
       },
       swiperList: [{
         id: '0001',

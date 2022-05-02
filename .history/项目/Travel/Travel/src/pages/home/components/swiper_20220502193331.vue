@@ -1,8 +1,11 @@
 <template>
   <div class="wrapper">
     <swiper :option="swiperOption" :pagination="{ clickable: true }">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
-        <img class="swiper-img" :src="item.imgUrl"/>
+      <swiper-slide>
+        <img class="swiper-img" src="https://t7.baidu.com/it/u=3208306980,708281834&fm=193&f=GIF" />
+      </swiper-slide>
+      <swiper-slide>
+        <img class="swiper-img" src="https://t7.baidu.com/it/u=965271672,387797424&fm=193&f=GIF" />
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -15,16 +18,8 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
-        loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'https://t7.baidu.com/it/u=3208306980,708281834&fm=193&f=GIF'
-      }, {
-        id: '0002',
-        imgUrl: 'https://t7.baidu.com/it/u=965271672,387797424&fm=193&f=GIF'
-      }]
+        pagination: '.swiper-pagination'
+      }
     }
   }
 }

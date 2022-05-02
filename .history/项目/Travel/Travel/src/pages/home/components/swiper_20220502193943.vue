@@ -15,8 +15,7 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
-        loop: true
+        pagination: '.swiper-pagination'
       },
       swiperList: [{
         id: '0001',

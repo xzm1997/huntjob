@@ -1,0 +1,1 @@
+r => setTimeout(() => r(x, console.log(x)

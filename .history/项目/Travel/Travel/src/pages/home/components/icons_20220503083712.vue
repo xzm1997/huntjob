@@ -1,0 +1,19 @@
+<template>
+  <div class="icons">
+    icons
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeIcons'
+}
+</script>
+
+<style lang="stylus" scoped>
+  .icons
+    overflow hidden
+    height:0
+    padding-bottom:100%
+    background:green
+</style>

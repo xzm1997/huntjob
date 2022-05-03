@@ -2,7 +2,7 @@
   <div>
     <home-header></home-header>
     <home-swiper></home-swiper>
-    <home-icons></home-icons>
+    <p>123</p>
   </div>
 </template>
 
@@ -14,8 +14,7 @@ export default {
   name: 'Home',
   components: {
     HomeHeader,
-    HomeSwiper,
-    HomeIcons
+    HomeSwiper
   }
 }
 </script>

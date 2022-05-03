@@ -20,10 +20,10 @@ export default {
       },
       swiperList: [{
         id: '0001',
-        imgUrl: 'https://t7.baidu.com/it/u=1506897211,10158787&fm=193&f=GIF'
+        imgUrl: 'https://t7.baidu.com/it/u=3208306980,708281834&fm=193&f=GIF'
       }, {
         id: '0002',
-        imgUrl: 'https://t7.baidu.com/it/u=965271672,387797424&fm=193&f=GIF'
+        imgUrl: 'https://t7.baidu.com/it/u=1506897211,10158787&fm=193&f=GIF'
       }]
     }
   }

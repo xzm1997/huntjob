@@ -2,7 +2,7 @@
   <div>
     <home-header></home-header>
     <home-swiper></home-swiper>
-    <home-icons></home-icons>
+    <p>123</p>
   </div>
 </template>
 

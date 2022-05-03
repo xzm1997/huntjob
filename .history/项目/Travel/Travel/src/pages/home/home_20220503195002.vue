@@ -3,7 +3,6 @@
     <home-header></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
-    <home-recommend></home-recommend>
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
     HomeHeader,
     HomeSwiper,
     HomeIcons,
-    HomeRecommend
+    RecommendIcons
   }
 }
 </script>

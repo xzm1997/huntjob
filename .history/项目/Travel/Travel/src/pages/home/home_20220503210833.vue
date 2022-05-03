@@ -20,8 +20,7 @@ export default {
     HomeHeader,
     HomeSwiper,
     HomeIcons,
-    HomeRecommend,
-    HomeWeekend
+    HomeRecommend
   }
 }
 </script>

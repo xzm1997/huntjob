@@ -33,12 +33,12 @@ export default {
         desc: '美丽的海洋世界景点'
       }, {
         id: '0003',
-        imgUrl: 'https://t7.baidu.com/it/u=2582370511,530426427&fm=193&f=GIF',
+        imgUrl: 'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
         title: '大连花果山海洋世界',
         desc: '美丽的海洋世界景点'
       }, {
         id: '0004',
-        imgUrl: 'https://t7.baidu.com/it/u=4069854689,43753836&fm=193&f=GIF',
+        imgUrl: 'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
         title: '大连花果山海洋世界',
         desc: '美丽的海洋世界景点'
       }]

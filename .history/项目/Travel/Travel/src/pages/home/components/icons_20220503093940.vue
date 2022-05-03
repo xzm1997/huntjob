@@ -1,0 +1,75 @@
+<template>
+  <div class="icons">
+    <swiper :pagination="{ clickable: true }">
+      <swiper-slide>
+        <div class="icon">
+          <div class="icon-img">
+            <img class="icon-img-content"
+            src="https://img0.baidu.com/it/u=2926715223,1445444764&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" />
+          </div>
+          <p class="icon-desc">热门景点</p>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="icon">
+          <div class="icon-img">
+            <img class="icon-img-content"
+            src="https://img0.baidu.com/it/u=2926715223,1445444764&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" />
+          </div>
+          <p class="icon-desc">热门景点</p>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeIcons'
+  data () {
+    return {
+      iconList: [{
+        id: '0001',
+        imgUrl:'https://img0.baidu.com/it/u=2926715223,1445444764&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500'
+      }, {
+        
+      }]
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  @import '~styles/varibles.styl'
+  .icons >>> .swiper-container
+    height:0
+    padding-bottom:50%
+  .icon
+    position:relative
+    overflow:hidden
+    float:left
+    height:0
+    width:25%
+    padding-bottom: 25%
+    .icon-img
+      position:absolute
+      top:0
+      left:0
+      right:0
+      bottom:.44rem
+      box-sizing:border-box
+      padding:.1rem
+      .icon-img-content
+        display: block
+        margin:0 auto
+        height:100%
+    .icon-desc
+      position:absolute
+      left:0
+      right:0
+      bottom:0
+      height: .44rem
+      line-height:.44rem
+      color:$darkTextColor
+      text-align: center
+</style>

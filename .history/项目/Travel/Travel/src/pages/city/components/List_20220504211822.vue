@@ -24,7 +24,7 @@
             v-for="innerItem of item"
             :key="innerItem.id"
           >
-            {{innerItem.name}}
+            阿拉尔
             </div>
         </div>
       </div>

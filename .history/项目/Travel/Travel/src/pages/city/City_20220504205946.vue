@@ -33,11 +33,15 @@ export default {
         .then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc (res) {
+      // console.log(res)
       res = res.data
+      // console.log(res.ret)
       if (res.ret && res.data) {
+        // console.log(res.data)
         const data = res.data
         this.cities = data.cities
         this.hotCities = data.hotCities
+        console.log(this.hotCities)
       }
     }
   },

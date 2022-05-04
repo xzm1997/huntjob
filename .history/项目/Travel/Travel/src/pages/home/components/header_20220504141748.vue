@@ -29,7 +29,7 @@ export default {
   @import '~styles/varibles'
   .header
     display:flex
-    line-height: $headerHeight
+    line-height: .86rem
     background:$bgColor
     color:#fff
     .header-left

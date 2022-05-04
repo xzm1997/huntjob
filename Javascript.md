@@ -49,11 +49,13 @@
 - Promise的状态在发生变化之后，就不会再发生变化
 - `promise.then` 是微任务，它会在所有的宏任务执行完之后才会执行，同时需要promise内部的状态发生变化
 - `Promise.resolve`方法的参数如果是一个原始值，或者是一个不具有`then`方法的对象，则`Promise.resolve`方法返回一个新的`Promise`对象，状态为`resolved`
+- `Promise`没有返回值，后面的代码不会执行
 - Promise返回任意一个非 promise 的值都会被包裹成 promise 对象
 - `.then` 或 `.catch` 返回的值不能是 promise 本身，否则会造成死循环。
 - `.then` 或`.catch` 的参数期望是函数，传入非函数则会发生**值透传**。
 - finally本质上是then方法的特例 `.finally()`方法的回调函数不接受任何的参数，也就是说你在`.finally()`函数中是无法知道Promise最终的状态是`resolved`还是`rejected`的 它最终返回的默认会是一个上一次的Promise对象值，不过如果抛出的是一个异常则返回异常的Promise对象。
 - `all`和`race`传入的数组中如果有会抛出异常的异步任务，那么只有最先抛出的错误会被捕获，并且是被`then`的第二个参数或者后面的catch捕获；但并不会影响数组中其它的异步任务的执行。
+- 如果`async`函数中抛出了错误，就会终止错误结果，不会继续向下执行。如果想要让错误不足之处后面的代码执行，可以使用catch来捕获
 
 ## `Async`和`Await`
 - `async`函数是使用`async`关键字声明的函数，允许使用`await`关键字。`async`和`await`关键字让我们可以用一种更简洁的方式写出基于`Promise`的**异步**行为，而无需刻意地链式调用`promise`。

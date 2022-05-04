@@ -1,14 +1,13 @@
 <template>
   <ul class="list">
     <li class="item"
-      v-for="item of letters"
-      :key="item"
-      :ref="item"
+      v-for="(item, key) of cities"
+      :key="key"
       @touchstart="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
       @click="handleLetterClick"
-    >{{item}}</li>
+    >{{key}}</li>
   </ul>
 </template>
 
@@ -20,21 +19,12 @@ export default {
   },
   data () {
     return {
-      touchStatus: false,
-      startY: 0,
-      timer: null
+      touchStatus: false
     }
-  },
-  updated () {
-    this.startY = this.$refs['A'][0].offsetTop
   },
   computed: {
     letters () {
-      const letters = []
-      for (let i in this.cities) {
-        letters.push(i)
-      }
-      return letters
+      const
     }
   },
   methods: {
@@ -46,16 +36,7 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        if (this.timer) {
-          clearTimeout(this.timer)
-        }
-        this.timer = setTimeout(() => {
-          const touchY = e.touches[0].clientY - 79
-          const index = Math.floor((touchY - this.startY) / 20)
-          if (index >= 0 && index < this.letters.length) {
-            this.$emit('change', this.letters[index])
-          }
-        }, 8)
+        console.log()
       }
     },
     handleTouchEnd (e) {

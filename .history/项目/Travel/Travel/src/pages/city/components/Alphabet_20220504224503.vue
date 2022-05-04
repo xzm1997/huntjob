@@ -46,16 +46,11 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        if (this.timer) {
-          clearTimeout(this.timer)
+        const touchY = e.touches[0].clientY - 79
+        const index = Math.floor((touchY - this.startY) / 20)
+        if (index >= 0 && index < this.letters.length) {
+          this.$emit('change', this.letters[index])
         }
-        this.timer = setTimeout(() => {
-          const touchY = e.touches[0].clientY - 79
-          const index = Math.floor((touchY - this.startY) / 20)
-          if (index >= 0 && index < this.letters.length) {
-            this.$emit('change', this.letters[index])
-          }
-        }, 8)
       }
     },
     handleTouchEnd (e) {

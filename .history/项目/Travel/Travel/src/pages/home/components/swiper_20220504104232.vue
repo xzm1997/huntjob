@@ -1,0 +1,44 @@
+<template>
+  <div class="wrapper">
+    <swiper :option="swiperOption" :pagination="{ clickable: true }">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl"/>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeSwiper',
+  data () {
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      }
+      // swiperList: [{
+      //   id: '0001',
+      //   imgUrl: 'https://t7.baidu.com/it/u=1506897211,10158787&fm=193&f=GIF'
+      // }, {
+      //   id: '0002',
+      //   imgUrl: 'https://t7.baidu.com/it/u=965271672,387797424&fm=193&f=GIF'
+      // }]
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .wrapper >>> .swiper-pagination-bullet-active
+    background: #fff
+  .wrapper
+    overflow: hidden
+    width: 100%
+    height:0
+    padding-bottom:31.25%
+    background: #aaa
+    .swiper-img
+      width:100%
+</style>

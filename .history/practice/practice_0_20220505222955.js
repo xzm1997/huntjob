@@ -16,3 +16,4 @@ var obj = {
 }
 console.log(obj.getX())
 console.log(obj.getY())
+console.log(this.x)

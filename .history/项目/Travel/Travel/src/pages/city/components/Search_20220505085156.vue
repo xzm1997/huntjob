@@ -3,15 +3,12 @@
     <div class="search">
       <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音" />
     </div>
-    <div class="search-content" ref="search" v-show="keyword">
+    <div class="search-content">
       <ul>
         <li class="search-item border-bottom"
         v-for="item of list"
-        :key="item.id">
+        :key="item.name">
           {{item.name}}
-        </li>
-        <li class="search-item border-bottom" v-show="hasNoData">
-          没有找到匹配数据
         </li>
       </ul>
     </div>
@@ -19,7 +16,6 @@
 </template>
 
 <script>
-import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
   data () {
@@ -32,19 +28,10 @@ export default {
   props: {
     cities: Object
   },
-  computed: {
-    hasNoData () {
-      return !this.list.length
-    }
-  },
   watch: {
     keyword () {
       if (this.timer) {
         clearTimeout(this.timer)
-      }
-      if (!this.keyword) {
-        this.list = []
-        return
       }
       this.timer = setTimeout(() => {
         const result = []
@@ -60,7 +47,7 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.search)
+    
   }
 }
 </script>

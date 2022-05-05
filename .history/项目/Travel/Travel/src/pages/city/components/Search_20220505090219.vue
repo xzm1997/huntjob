@@ -33,10 +33,10 @@ export default {
     cities: Object
   },
   computed: {
-    hasNoData () {
+    hasNoData() {
       return !this.list.length
-    }
-  },
+      }
+    },
   watch: {
     keyword () {
       if (this.timer) {

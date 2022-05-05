@@ -10,7 +10,7 @@
         :key="item.id">
           {{item.name}}
         </li>
-        <li class="search-item border-bottom" v-show="hasNoData">
+        <li class="search-item border-bottom" v-show="!list.length">
           没有找到匹配数据
         </li>
       </ul>
@@ -33,10 +33,8 @@ export default {
     cities: Object
   },
   computed: {
-    hasNoData () {
-      return !this.list.length
+    hasList
     }
-  },
   watch: {
     keyword () {
       if (this.timer) {

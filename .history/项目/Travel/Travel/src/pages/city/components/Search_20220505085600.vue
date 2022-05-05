@@ -3,15 +3,12 @@
     <div class="search">
       <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音" />
     </div>
-    <div class="search-content" ref="search" v-show="keyword">
+    <div class="search-content" ref="search">
       <ul>
         <li class="search-item border-bottom"
         v-for="item of list"
         :key="item.id">
           {{item.name}}
-        </li>
-        <li class="search-item border-bottom" v-show="hasNoData">
-          没有找到匹配数据
         </li>
       </ul>
     </div>
@@ -31,11 +28,6 @@ export default {
   },
   props: {
     cities: Object
-  },
-  computed: {
-    hasNoData () {
-      return !this.list.length
-    }
   },
   watch: {
     keyword () {

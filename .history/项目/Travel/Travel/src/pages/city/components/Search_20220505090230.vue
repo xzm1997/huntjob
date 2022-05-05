@@ -35,8 +35,8 @@ export default {
   computed: {
     hasNoData () {
       return !this.list.length
-    }
-  },
+      }
+    },
   watch: {
     keyword () {
       if (this.timer) {

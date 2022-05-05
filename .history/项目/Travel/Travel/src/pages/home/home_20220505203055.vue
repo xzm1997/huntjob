@@ -27,25 +27,22 @@ export default {
   },
   data () {
     return {
-      lastCity: '',
       swiper: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     }
   },
-  computed: {
-    ...mapState(['city'])
-  },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json?city=' + this.city)
+      axios.get('/api/index.json')
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
+        // this.city = data.city
         this.recommendList = data.recommendList
         this.swiper = data.swiperList
         this.iconList = data.iconList
@@ -54,14 +51,7 @@ export default {
     }
   },
   mounted () {
-    this.lastCity = this.city
     this.getHomeInfo()
-  },
-  activated () {
-    if (this.lastCity !== this.city) {
-      this.lastCity = this.city
-      this.getHomeInfo()
-    }
   }
 }
 </script>

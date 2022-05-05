@@ -46,6 +46,7 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
+        // this.city = data.city
         this.recommendList = data.recommendList
         this.swiper = data.swiperList
         this.iconList = data.iconList
@@ -54,14 +55,10 @@ export default {
     }
   },
   mounted () {
-    this.lastCity = this.city
     this.getHomeInfo()
   },
   activated () {
-    if (this.lastCity !== this.city) {
-      this.lastCity = this.city
-      this.getHomeInfo()
-    }
+    console.log('activated')
   }
 }
 </script>

@@ -33,9 +33,6 @@ export default {
   methods: {
     handleBannerClick () {
       this.showGallary = true
-    },
-    handleGallaryClose () {
-      this.showGallary = false
     }
   },
   components: {

@@ -35,7 +35,7 @@ export default {
       this.showGallary = true
     },
     handleGallaryClose () {
-      this.showGallary = false
+      
     }
   },
   components: {

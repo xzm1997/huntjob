@@ -8,7 +8,7 @@
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe61e;</span>
-          {{this.bannerImg.length}}
+          39
         </div>
       </div>
     </div>

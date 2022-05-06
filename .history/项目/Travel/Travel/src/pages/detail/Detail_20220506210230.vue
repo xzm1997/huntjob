@@ -1,9 +1,6 @@
 <template>
   <div>
-    <detail-banner
-      :sightName="sightName"
-      :bannerImg="bannerImg"
-      :bannerImgs="gallaryImgs"></detail-banner>
+    <detail-banner :sightName="sightName"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
@@ -28,7 +25,25 @@ export default {
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
-      list: []
+      list: [{
+        title: '成人票',
+        children: [{
+          title: '成人三馆联票',
+          children: [{
+            title: '成人三馆联票-线下销售'
+          }, {
+            title: '成人五馆联票-线上销售'
+          }]
+        }, {
+          title: '成人五馆联票'
+        }]
+      }, {
+        title: '学生票'
+      }, {
+        title: '儿童票'
+      }, {
+        title: '特惠票'
+      }]
     }
   },
   methods: {
@@ -46,7 +61,6 @@ export default {
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
-        this.list = data.categoryList
       }
     }
   },

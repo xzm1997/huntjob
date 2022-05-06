@@ -1,9 +1,6 @@
 <template>
   <div>
-    <detail-banner
-      :sightName="sightName"
-      :bannerImg="bannerImg"
-      :bannerImgs="gallaryImgs"></detail-banner>
+    <detail-banner :sightName="sightName"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
@@ -28,7 +25,7 @@ export default {
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
-      list: []
+      list: [}
     }
   },
   methods: {
@@ -46,7 +43,6 @@ export default {
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
-        this.list = data.categoryList
       }
     }
   },

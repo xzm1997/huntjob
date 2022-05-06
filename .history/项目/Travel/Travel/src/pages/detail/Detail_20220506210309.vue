@@ -1,9 +1,6 @@
 <template>
   <div>
-    <detail-banner
-      :sightName="sightName"
-      :bannerImg="bannerImg"
-      :bannerImgs="gallaryImgs"></detail-banner>
+    <detail-banner :sightName="sightName"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>

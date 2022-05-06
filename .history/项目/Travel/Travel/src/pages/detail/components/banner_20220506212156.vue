@@ -4,11 +4,11 @@
       <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
         <div class="banner-title">
-          {{this.sightName}}
+          大连圣亚海洋世界(AAAA景区)
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe61e;</span>
-          {{this.bannerImg.length}}
+          39
         </div>
       </div>
     </div>

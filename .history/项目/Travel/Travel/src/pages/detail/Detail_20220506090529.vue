@@ -1,6 +1,6 @@
 <template>
   <div>
-    <detail-banner></detail-banner>
+    detail
   </div>
 </template>
 
@@ -8,9 +8,7 @@
 import DetailBanner from './components/banner'
 export default {
   name: 'Detail',
-  components: {
-    DetailBanner
-  }
+  
 }
 </script>
 

@@ -25,6 +25,7 @@
 <script>
 import CommonGallary from 'common/gallary/gallary'
 import FadeAnimation from 'common/fade/FadeAnimation'
+import FadeAnimation from '../../../common/fade/fadeAnimation.vue'
 export default {
   name: 'DetailBanner',
   props: {

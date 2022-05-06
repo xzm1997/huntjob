@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted () {
-    // Caution!
+    // Caution
     window.addEventListener('scroll', this.handleScroll)
   },
   activated () {

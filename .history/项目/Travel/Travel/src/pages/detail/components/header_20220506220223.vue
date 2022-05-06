@@ -40,12 +40,9 @@ export default {
       }
     }
   },
-  mounted () {
-    // Caution!
-    window.addEventListener('scroll', this.handleScroll)
-  },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+    console.log(1)
   },
   deactivated () {
     window.removeEventListener('scroll', this.handleScroll)

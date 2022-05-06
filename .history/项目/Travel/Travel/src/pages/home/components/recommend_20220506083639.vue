@@ -7,7 +7,7 @@
         class="item border-bottom"
         v-for="(item, index) of recommend"
         :key="index"
-        :to="'/detail' + item.id">
+        to="/detail">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>

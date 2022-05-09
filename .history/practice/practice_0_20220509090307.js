@@ -10,9 +10,6 @@ function objectFactory() {
 
   newObj = Object.create(constructor.prototype)
   res = constructor.apply(newObj, arguments)
-
-  let flag = res && (typeof res === "object" || typeof res === "function");
-  return flag ? res : newObj
 }
 
 

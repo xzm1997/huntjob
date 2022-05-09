@@ -1,0 +1,1 @@
+console.log(new Date('2020-12-1').getDate())

@@ -11,17 +11,17 @@ function childNum(num, count){
   while(exitCount < num - 1){
       if(allplayer[curIndex] !== 0) counter++;    
       
-      if(counter == count) {
+      if(counter == count){
           allplayer[curIndex] = 0;                 
           counter = 0;
           exitCount++;  
       }
       curIndex++;
-      if (curIndex == num) {
+      if(curIndex == num){
           curIndex = 0               
       };           
   }    
-  for (i = 0; i < num; i++) {
+  for(i = 0; i < num; i++){
       if(allplayer[i] !== 0){
           return allplayer[i]
       }      

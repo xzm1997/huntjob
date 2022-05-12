@@ -1,5 +1,5 @@
 async function async1 () {
-  await async2().catch(e => console.log(e));
+  await async2();
   console.log('async1');
   return 'async1 success'
 }

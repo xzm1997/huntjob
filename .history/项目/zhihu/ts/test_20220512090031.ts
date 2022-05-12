@@ -6,10 +6,4 @@ const add = (x: number, y: number, z ?: number): number => {
   }
 }
 
-interface ISum {
-  (x:number, y:number, z?:number):number
-}
-
-let add2: ISum = add
-
-console.log(add(1,2,3))
+let result = add(1,2)

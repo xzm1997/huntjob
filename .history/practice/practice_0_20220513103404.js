@@ -16,9 +16,9 @@ function light(timer, light, callback) {
 }
 
 const step = () => {
-  light(3000, red, () => {
-    light(2000, green, () => {
-      light(1000, yellow, step)
+  light(3000, red(), () => {
+    light(2000, green(), () => {
+      light(1000, yellow(), step)
     })
   })
 }

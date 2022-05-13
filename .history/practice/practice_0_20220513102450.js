@@ -14,13 +14,3 @@ function light(timer, light, callback) {
     callback();
   }, timer)
 }
-
-const step = () => {
-  light(3000, red, () => {
-    light(2000, green, () => {
-      light(1000, yellow, step)
-    })
-  })
-}
-
-step();

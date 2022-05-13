@@ -10,15 +10,15 @@ function yellow() {
 
 function light(timer, light, callback) {
   setTimeout(() => {
-    light();
+    light;
     callback();
   }, timer)
 }
 
 const step = () => {
-  light(3000, red, () => {
-    light(2000, green, () => {
-      light(1000, yellow, step)
+  light(3000, red(), () => {
+    light(2000, green(), () => {
+      light(1000, yellow(), step)
     })
   })
 }

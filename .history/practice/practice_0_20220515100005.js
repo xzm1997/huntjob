@@ -14,21 +14,10 @@ class Promise{
       this.value = value;
     }
 
-    let reject = (reason) => {
+    let rejected = (reason) => {
       if (this.status !== PENDING) return;
       this.status = REJECTED;
       this.reason = reason;
     }
-
-    try {
-      executor(resolve, reject);
-    } catch (error) {
-      reject(error);
-    }
-  }
-
-  then(onFulfilled, onRejected) {
-    if (this.status === FULFILLED) onFulfilled(this.value);
-    if (this.status === REJECTED) onRejected(this.reason);
   }
 }

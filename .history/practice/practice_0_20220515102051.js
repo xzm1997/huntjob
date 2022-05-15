@@ -21,14 +21,9 @@ class Promise{
     }
 
     try {
-      executor(resolve, reject);
+      executor(resolve, reject)
     } catch (error) {
-      reject(error);
+      reject(error)
     }
-  }
-
-  then(onFulfilled, onRejected) {
-    if (this.status === FULFILLED) onFulfilled(this.value);
-    if (this.status === REJECTED) onRejected(this.reason);
   }
 }

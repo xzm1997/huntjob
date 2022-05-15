@@ -1,8 +1,8 @@
 var a=3;
 function c(){
-  alert(a);
+   alert(a);
 }
 (function(){
-  var a=4;
-  c();
+ var a=4;
+ c();
 })();

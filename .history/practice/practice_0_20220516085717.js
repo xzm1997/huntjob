@@ -20,16 +20,5 @@ class Promise {
         this.reason = reason
       }
     }
-
-    try {
-      execute(resolve, reject)
-    } catch (e) {
-      reject(e)
-    }
-  }
-
-  then(onFulfilled, onRejected) {
-    if (this.status === FULFILLED) onFulfilled(this.value);
-    if (this.status === REJECTED) onRejected(this.reason);
   }
 }

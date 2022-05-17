@@ -12,6 +12,6 @@ function reshape(num) {
   }
   return res
 }
-reshape(10000)
-// console.log(reshape(10000))
+
+console.log(reshape(10000))
 

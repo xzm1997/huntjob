@@ -3,14 +3,14 @@
 */
 
 let inputStr = '102'.split('')
-let input = [10]
+let input = []
 inputStr.forEach((item) => {
   input.push(Number(item))
 })
 // console.log(input)
-if (input.length === 1) return 0
+if (input.length === 0) return 0
 let dir = [
-  [1,1,1,1,1,1,0],// 0
+  [0,0,0,0,0,0,0],// 0
   [0,1,1,0,0,0,0],// 1
   [1,1,0,1,1,0,1],// 2
   [1,1,1,1,0,0,1],// 3
@@ -19,10 +19,9 @@ let dir = [
   [1,0,1,1,1,1,1],// 6
   [1,1,1,0,0,0,0],// 7
   [1,1,1,1,1,1,1],// 8
-  [1,1,1,1,0,1,1],// 9
-  [0,0,0,0,0,0,0] // null
+  [1,1,1,1,0,1,1] // 9
 ]
-console.log(dir[10])
+
 for (let i = 0; i < input.length; ++i) {
   
 }

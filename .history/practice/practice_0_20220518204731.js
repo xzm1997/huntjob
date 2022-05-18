@@ -22,7 +22,7 @@ let dir = [
   [1,1,1,1,0,1,1],// 9
   [0,0,0,0,0,0,0] // null
 ]
-console.log(dir[10])
+
 for (let i = 0; i < input.length; ++i) {
-  
+
 }

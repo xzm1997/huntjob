@@ -24,5 +24,5 @@ let dir = [
 ]
 console.log(dir[10])
 for (let i = 0; i < input.length; ++i) {
-  
+
 }

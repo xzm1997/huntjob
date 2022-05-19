@@ -9,17 +9,6 @@ parseParam(url)
 */
 
 function parseParam(url) {
-  const parseStr = /.*\?(.*)$/.exec(url)[1]
-  const paramsArr = parseStr.split('&');
-  // console.log(paramsArr)
-  let paramsObj = {}
-  paramsArr.forEach((item) => {
-    if (/=/.test(item)) {
-      let [key, val] = item.split('=')
-      val = decodeURIComponent(val);
-      val = /^\d+$/.test(val) ? parseFloat(val) : val
-    } else {
-      paramsObj[item] = true
-    }
-  })
+  var parseStr = /\?.*/.exec(url)
+  console.log(parseStr)
 }

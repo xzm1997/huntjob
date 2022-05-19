@@ -15,9 +15,7 @@ function parseParam(url) {
   let paramsObj = {}
   paramsArr.forEach((item) => {
     if (/=/.test(item)) {
-      let [key, val] = item.split('=')
-      val = decodeURIComponent(val);
-      val = /^\d+$/.test(val) ? parseFloat(val) : val
+      
     } else {
       paramsObj[item] = true
     }

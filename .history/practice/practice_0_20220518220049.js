@@ -38,3 +38,7 @@ for (let i = 0; i < input.length-1; ++i) {
   res += diff(input[i], input[i+1])
 }
 console.log(res)
+
+
+1111101
+0011111

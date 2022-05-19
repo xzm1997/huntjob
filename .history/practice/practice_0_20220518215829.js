@@ -16,8 +16,8 @@ inputStr.forEach((item) => {
   input.push(Number(item))
 })
 if (input.length === 1) {
-  // console.log('!!')
-  return 0
+  console.log(0)
+  return
 }
 // console.log(input)
 let dir = [
@@ -38,3 +38,7 @@ for (let i = 0; i < input.length-1; ++i) {
   res += diff(input[i], input[i+1])
 }
 console.log(res)
+
+
+1111101
+0011111

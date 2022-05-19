@@ -1,25 +1,22 @@
 /*
  * readline 
 */
-const diff = function(front,back) {
-  // console.log(front+1)
+const diff = function(front) {
+  console.log(front, front+1)
   let res = 0
   for (let i = 0; i < 7; i++) {
-    if (dir[front][i] !== dir[back][i]) res++
+    if (dir[front][i] !== dir[front+1][i]) res++
   }
   return res
 }
 
-let inputStr = ''.split('')
+let inputStr = '1'.split('')
 let input = [10], res = 0
 inputStr.forEach((item) => {
   input.push(Number(item))
 })
-if (input.length === 1) {
-  // console.log('!!')
-  return 0
-}
 // console.log(input)
+if (input.length === 1) return 0
 let dir = [
   [1,1,1,1,1,1,0],// 0
   [0,1,1,0,0,0,0],// 1
@@ -35,6 +32,6 @@ let dir = [
 ]
 // console.log(input)
 for (let i = 0; i < input.length-1; ++i) {
-  res += diff(input[i], input[i+1])
+  res += diff(i)
 }
 console.log(res)

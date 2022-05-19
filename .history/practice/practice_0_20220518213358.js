@@ -15,11 +15,8 @@ let input = [10], res = 0
 inputStr.forEach((item) => {
   input.push(Number(item))
 })
-if (input.length === 1) {
-  // console.log('!!')
-  return 0
-}
 // console.log(input)
+if (input.length === 1) return 0
 let dir = [
   [1,1,1,1,1,1,0],// 0
   [0,1,1,0,0,0,0],// 1

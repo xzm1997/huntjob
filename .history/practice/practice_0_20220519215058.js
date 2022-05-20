@@ -27,5 +27,4 @@ function parseParam(url) {
       paramsObj[item] = true
     }
   })
-  return paramsObj
 }

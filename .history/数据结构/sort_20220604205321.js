@@ -111,13 +111,13 @@ function quickSort(arr) {
 }
 
 // 原地快排 参考：剑指offer40
-function quickSortAd (arr, l, r) {
+function quickSortAd (arr, l=0, r=arr.length-1) {
   if (l >= r) return arr;
   let i, j;
   [i, j] = [l, r];
   while (i < j) {
-    while (i < j && arr[j] >= arr[l]) --j;
-    while (i < j && arr[i] <= arr[l]) ++i;
+    while (i < j && arr[j] > arr[l]) --j;
+    while (i < j && arr[i] < arr[l]) ++i;
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   [arr[l], arr[i]] = [arr[i], arr[l]];
@@ -270,5 +270,5 @@ function radixSort(arr, maxDigit) {
 var arr = [2, 2, 3, 8, 7, 1, 2, 2, 2, 7, 3, 9, 8, 2, 1, 4, 2, 4, 6, 9, 2];
 // var res = heapSort(arr);
 // var res = radixSort(arr,7)
-let res = quickSortAd(arr, 0, arr.length-1)
-console.log(arr);
+let res = quickSortAd(arr)
+console.log(res);

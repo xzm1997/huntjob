@@ -345,7 +345,7 @@ async function getProcessedData(url) {
     - 综上，`iframe` 应谨慎使用。
 
 ## CSS与JS阻塞`DOM`解析与渲染
-- 尽量将CSS放头部，JS放底部，这样可以提高页面的性能。
+- 尽量将CSS放头部，JS放底部，这样可以提高页面的性能。**CSS不会阻塞`DOM`的解析、阻塞页面渲染；JS阻塞`DOM`解析**
 - CSS不会阻塞`DOM`的解析: 浏览器是解析`DOM`生成`DOM Tree`，结合CSS生成的`CSS Tree`，最终组成`render tree`（渲染树），再渲染页面。由此可见，在此过程中`CSS`完全无法影响`DOM Tree`，因而无需阻塞`DOM`解析。
 - CSS阻塞页面渲染: 基于性能与用户体验的考虑，浏览器会尽量减少渲染的次数，CSS阻塞页面渲染。
 - JS阻塞`DOM`解析

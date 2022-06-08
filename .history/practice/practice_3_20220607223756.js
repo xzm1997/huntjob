@@ -1,8 +1,7 @@
 let ping = function(time, fn) {
   setTimeout(() => {
-    console.log('ping');
-    fn;
+    fn();
   }, time);
 }
 
-ping(1000, ping());
+ping(1000, ping);

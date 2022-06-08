@@ -1,3 +1,0 @@
-const PENDING = 'PENDING';
-const FULFILLED = 'FULFILLED';
-cons

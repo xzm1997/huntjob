@@ -1,19 +1,12 @@
 ## 同步
-- start
+- 
 
 ## 微任务
-- promise1
-- settimeout timer2
+- 
 
 ## 宏任务
-- timer1
-- then： promise2
-- settimeout timer2
+- 
 
 
 ## 输出
-- start
-- promise1
-- timer1
-- promise2
-- timer2
+- 

@@ -40,14 +40,14 @@
       }
     }
     function throttle(fn) {
-      let timeout = null;
+      let timer = true;
       return function() {
-        if (!timeout) {
-          timeout = setTimeout(() => {
-            fn.call(this, arguments);
-            timeout = null;
-          }, 1000);
-        }
+        if (!timer) return;
+        timer = false;
+        setTimeout(() => {
+          fn.call(this, arguments);
+          timer = true;
+        }, 1000)
       }
     }
   </script>

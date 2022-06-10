@@ -21,7 +21,7 @@
       let myDebounce = document.getElementById("debounce");
       let myThrottle = document.getElementById("throttle");
       myDebounce.addEventListener("click", debounce(sayDebounce));
-      myThrottle.addEventListener("click", throttle(sayThrottle));
+      myDebounce.addEventListener("click", throttle(sayThrottle));
     }
   
     function sayDebounce() {
@@ -45,8 +45,7 @@
         if (!timeout) {
           timeout = setTimeout(() => {
             fn.call(this, arguments);
-            timeout = null;
-          }, 1000);
+          }, 1000)
         }
       }
     }

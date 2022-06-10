@@ -45,7 +45,6 @@
         if (!timeout) {
           timeout = setTimeout(() => {
             fn.call(this, arguments);
-            timeout = null;
           }, 1000);
         }
       }

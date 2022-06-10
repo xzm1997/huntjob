@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖与节流</title>
+</head>
+<body>
+  <div>
+    <h2>防抖与节流</h2>
+    <input id="wait" placeholder="时间设置" default="1"></input>
+    <button id="debounce" onclick="onAlert(this.id)">防抖</button>
+    <button id="throttle" onclick="onAlert(this.id)">节流</button>
+  </div>
+</body>
+</html>
+
+<script>
+  function onAlert (id) {
+    let wait = document.getElementById('wait').value;
+    console.log(wait);
+    if (id="debounce") {
+      debounce()
+    } else {
+      
+    }
+  }
+  let debounce = function (fn, wait) {
+    let timer = null;
+    return function () {
+      let context = this, args = arguments;
+      if (timer) {
+        clearTimeout(timer)
+        timer = null;
+      }
+      timer = setTimeout(() => {
+        fn.apply(context, args);
+      }, wait);
+    }
+  }
+  let throttle = function () {
+
+  }
+</script>

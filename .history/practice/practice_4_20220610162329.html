@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖与节流</title>
+</head>
+<body>
+  <div>
+    <h1>防抖与节流</h1>
+    <div>
+      <input id="wait"></input>
+      <button id="debounce">防抖</button></button>
+      <button id="throttle">节流</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  window.onload = function() {
+    let myDebounce = document.getElementById("debounce");
+    myDebounce.addEventListener("click", debounce(sayDebounce()))
+  }
+
+  function sayDebounce() {
+      console.log(this);
+      // ... 有些需要防抖的工作，在这里执行
+      console.log("防抖成功！");
+    }
+  function debounce(fn) {
+    let timeout = null;
+    return function() {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        fn.call(this, arguments);
+      }, 1000);
+    }
+  }
+</script>

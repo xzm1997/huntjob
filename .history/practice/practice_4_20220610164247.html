@@ -19,35 +19,24 @@
   <script>
     window.onload = function() {
       let myDebounce = document.getElementById("debounce");
-      let myThrottle = document.getElementById("throttle");
-      myDebounce.addEventListener("click", debounce(sayDebounce));
-      myThrottle.addEventListener("click", throttle(sayThrottle));
+      myDebounce.addEventListener("click", debounce(sayDebounce))
     }
   
     function sayDebounce() {
-      console.log("防抖成功！");
-    }
-    function sayThrottle() {
-      console.log("节流成功！");
-    }
+        console.log("防抖成功！");
+      }
     function debounce(fn) {
+      let wait = document.getElementById("wait");
+      let waitTime = wait.value;
+      console.log(waitTime)
+      wait = parseInt(waitTime) ? waitTime : 1000
       let timeout = null;
       return function() {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
           fn.call(this, arguments);
-        }, 1000);
-      }
-    }
-    function throttle(fn) {
-      let timeout = null;
-      return function() {
-        if (!timeout) {
-          timeout = setTimeout(() => {
-            fn.call(this, arguments);
-            timeout = null;
-          }, 1000);
-        }
+          console.log(wait);
+        }, wait);
       }
     }
   </script>

@@ -1,0 +1,8 @@
+const read_line = require('readline-sync')
+console.log("Input:")
+let input1 = read_line.question("")
+let input2 = read_line.question("")
+let input3 = read_line.question("")
+let input4 = read_line.question("")
+console.log("Output:")
+console.log(input1, input2, input3, input4)

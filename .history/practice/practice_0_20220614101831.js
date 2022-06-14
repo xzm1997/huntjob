@@ -15,4 +15,3 @@ const quickSort = (l, r) => {
 }
 
 quickSort(0, arr.length-1);
-console.log(arr);

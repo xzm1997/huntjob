@@ -13,14 +13,13 @@ function getUrlParam(sUrl, sKey) {
           res.set(key, [value]);
       }
   }
-  // console.log(res)
+  console.log(res)
   if (sKey) {
-    let ans = res.get(sKey)
-    if (ans.length === 1) return ans[0]
-    return ans;
+    return res.get(sKey);
   } else {
+    console.log(res);
     return [...res.values()].flat();
   }
 }
 
-console.log(getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test1=4#hehe').join(''))
+console.log(getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test1=1#hehe', 'test1'))

@@ -6,21 +6,13 @@ function getUrlParam(sUrl, sKey) {
   for (let i = 0; i < dir.length; ++i) {
       [key, value] = dir[i].split('=')
       if (res.has(key)) {
-        let valueNow = res.get(key)
-        valueNow.push(value);
-        res.set(key, valueNow)
+        console.log(res.get(key))
+          // res.set(key, res.get(key).push(value))
       } else {
           res.set(key, [value]);
       }
   }
-  // console.log(res)
-  if (sKey) {
-    let ans = res.get(sKey)
-    if (ans.length === 1) return ans[0]
-    return ans;
-  } else {
-    return [...res.values()].flat();
-  }
+  return res.get(sKey);
 }
 
-console.log(getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test1=4#hehe').join(''))
+getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe', 'key')

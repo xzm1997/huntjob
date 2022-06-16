@@ -1,7 +1,7 @@
 let a = "9007199254740991";
 let b = "1234567899999999999";
 
-function add (a, b) {
+function addByArray (a, b) {
   let aList = a.split("");
   let bList = b.split("");
 
@@ -27,5 +27,23 @@ function add (a, b) {
   return aList.join('');
 }
 
+let addByString = (a, b) => {
+  if (a.length < b.length) {
+    [a, b] = [b, a];
+  }
+  b = '0'.repeat(a.length - b.length) + b;
+  console.log(a, b);
+  let push = 0;
+  for (let i = a.length-1; i >= 0; --i) {
+    a[i] = (parseInt(a[i]) + parseInt(b[i]) + push).toString();
+    if (a[i] > 9) {
+      push = 1;
+      a[i] %= 10;
+    } else {
+      push = 0
+    }
+  }
+  return a;
+}
 
-console.log(add(a, b));
+console.log(addByString(a, b));

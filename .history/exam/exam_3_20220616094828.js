@@ -11,6 +11,7 @@ function add (a, b) {
   while (aList.length > bList.length) {
     bList.unshift('0');
   }
+  console.log(aList.length, bList.length);
   let push = 0;
   for (let i = aList.length-1; i >= 0; --i) {
     aList[i] = parseInt(aList[i]);

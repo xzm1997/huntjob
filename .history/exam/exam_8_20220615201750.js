@@ -21,7 +21,7 @@ function parseParam(url) {
 }
 
 function getUrlParam(sUrl, sKey) {
-  const paramsStr = /.+\?(.+)$/.exec(sUrl)
+  const paramsStr = /.+\?(.+)\#(.*)$/.exec(sUrl)
   console.log(paramsStr)
 }
 

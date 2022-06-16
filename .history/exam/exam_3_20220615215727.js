@@ -8,12 +8,13 @@ function add (a, b) {
   if (aList.length < bList.length) {
     [aList, bList] = [bList, aList];
   }
-  while (aList.length > bList.length) {
+  for (let i = 0; i < (aList.length- bList.length); ++i) {
     bList.unshift('0');
   }
+  console.log(aList, bList);
   let push = 0;
   for (let i = aList.length-1; i >= 0; --i) {
-    aList[i] = parseInt(aList[i]);
+    aList[i] = praseInt(aList[i]);
     bList[i] = parseInt(bList[i]);
     aList[i] = aList[i] + bList[i] + push;
     if (aList[i] > 9) {
@@ -23,9 +24,7 @@ function add (a, b) {
       push = 0;
     }
   }
-  if (push) aList.unshift('1');
-  return aList.join('');
 }
 
 
-console.log(add(a, b));
+add(a, b);

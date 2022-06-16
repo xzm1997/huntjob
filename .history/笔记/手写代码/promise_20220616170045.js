@@ -1,0 +1,5 @@
+class myPromise {
+  constructor(excutor) {
+
+  }
+}

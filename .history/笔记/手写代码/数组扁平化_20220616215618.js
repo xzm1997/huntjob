@@ -1,10 +1,11 @@
-const flat = (arr, deepth) => {
-  if (!Array.isArray(arr) || !deepth) {
+// TODO: Rewrite
+let flat = (arr, index) => {
+  if (!Array.isArray(arr) || !index) {
     return arr;
   }
   return arr.reduce((prev, cur) => {
     if (Array.isArray(cur)) {
-      return prev.concat(flat(cur, deepth-1));
+      return prev.concat(flat(cur, index-1));
     } else {
       return prev.concat(cur);
     }

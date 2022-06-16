@@ -4,9 +4,9 @@ const flat = (arr, deepth) => {
   }
   return arr.reduce((prev, cur) => {
     if (Array.isArray(cur)) {
-      return prev.concat(flat(cur, deepth-1));
+
     } else {
-      return prev.concat(cur);
+      
     }
   }, [])
 }

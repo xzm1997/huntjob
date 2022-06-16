@@ -21,19 +21,12 @@ function getUrlParam(sUrl, sKey) {
       map.set(temp[0], value);
     }
   })
-  // console.log(map);
-  let res = []
-  if (!sKey) {
-    map.forEach(item => {
-      res.push(...item)
-    })
-    return res;
-  }
-  return map.get(sKey);
+  console.log(map);
+
 }
 
 
-let ans, url, index = 0;
+let ans, url, index = 2;
 switch(index) {
   case 0:
     url = 'http://www.nowcoder.com?key=1&key=2&key=3&test1=4#hehe'
@@ -48,5 +41,5 @@ switch(index) {
     url = '';
     break;
 }
-ans = getUrlParam(url, 'test1');
-console.log(ans)
+ans = getUrlParam(url)
+// console.log(ans)

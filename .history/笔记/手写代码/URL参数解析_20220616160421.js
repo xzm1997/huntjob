@@ -22,14 +22,10 @@ function getUrlParam(sUrl, sKey) {
     }
   })
   // console.log(map);
-  let res = []
   if (!sKey) {
-    map.forEach(item => {
-      res.push(...item)
-    })
-    return res;
+    return map;
   }
-  return map.get(sKey);
+
 }
 
 
@@ -48,5 +44,5 @@ switch(index) {
     url = '';
     break;
 }
-ans = getUrlParam(url, 'test1');
+ans = getUrlParam(url)
 console.log(ans)

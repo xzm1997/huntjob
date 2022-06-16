@@ -27,9 +27,8 @@ function getUrlParam(sUrl, sKey) {
     map.forEach(item => {
       res.push(...item)
     })
-    return res;
   }
-  return map.get(sKey);
+
 }
 
 
@@ -48,5 +47,5 @@ switch(index) {
     url = '';
     break;
 }
-ans = getUrlParam(url, 'test1');
+ans = getUrlParam(url)
 console.log(ans)

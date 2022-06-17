@@ -1,0 +1,3 @@
+function mySetInterval (fn, time) {
+  
+}

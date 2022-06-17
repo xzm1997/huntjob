@@ -8,8 +8,8 @@ class myPromise {
     this.value = null;
     this.reason = null;
 
-    this.resolveList = [];
-    this.rejectList = [];
+    let resolveList = [];
+    let rejectList = [];
 
     let resolve = (value) => {
       if (value instanceof myPromise) {
@@ -54,13 +54,8 @@ class myPromise {
       typeof onRejected === "function"
         ? onRejected
         : function(reason) {
-          throw error;
+          return reason;
         }
-
-    if (this.status === PENDING) {
-      this.resolvedCallbacks.push(onResolved);
-      this.rejectedCallbacks.push(onRejected);
-    }
 
     if (this.status === FULFILLED) onFulfilled(this.value);
     if (this.status === REJECTED) onRejected(this.reason);

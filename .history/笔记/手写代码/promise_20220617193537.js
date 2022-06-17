@@ -8,8 +8,8 @@ class myPromise {
     this.value = null;
     this.reason = null;
 
-    this.resolveList = [];
-    this.rejectList = [];
+    let resolveList = [];
+    let rejectList = [];
 
     let resolve = (value) => {
       if (value instanceof myPromise) {

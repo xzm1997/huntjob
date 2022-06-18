@@ -35,28 +35,4 @@ class myPromise {
       reject(err);
     }
   }
-
-  then (onFulfilled, onRejected) {
-    onFulfilled =
-      typeof onFulfilled === "function"
-        ? onFulfilled
-        : function(value) {
-          return value;
-        }
-
-    onRejected =
-      typeof onRejected === "function"
-        ? onRejected
-        : function(reason) {
-          throw error;
-        }
-    
-    if (this.status === PENDING) {
-      this.resolvedCallbacks.push(onResolved);
-      this.rejectedCallbacks.push(onRejected);
-    }
-
-    if (this.status === FULFILLED) onFulfilled(this.value);
-    if (this.status === REJECTED) onRejected(this.reason);
-  }
 }

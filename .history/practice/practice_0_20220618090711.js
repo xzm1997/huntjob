@@ -1,0 +1,7 @@
+const PENDING = 'PENDING';
+const FULFILLED = 'FULFILLED';
+const REJECTED = 'REJECTED';
+
+class myPromise (executor) {
+  
+}

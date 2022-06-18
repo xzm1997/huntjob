@@ -3,14 +3,12 @@ const arrRandom = (arr) => {
     return Math.floor(Math.random() * max);
   }
 
+  // let index;
   for (let i = 0; i < arr.length; ++i) {
-    // let index = 0;
-    let index = getRandom(arr.length);
+    let index;
+    index = getRandom(arr.length)
     // console.log(index);
     [arr[i], arr[index]] = [arr[index], arr[i]];
-    // let temp = arr[i];
-    // arr[i] = arr[index];
-    // arr[index] = temp;
   }
 
   return arr;

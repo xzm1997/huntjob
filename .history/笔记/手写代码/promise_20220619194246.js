@@ -55,7 +55,7 @@ class myPromise {
       typeof onRejected === "function"
         ? onRejected
         : function(reason) {
-          throw reason;
+          throw error;
         }
 
     if (this.status === PENDING) {

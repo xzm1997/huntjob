@@ -1,6 +1,6 @@
 function debounce(fn, delay) {
   let timer = null;
-  return function() {
+  return function {
     let context = this;
     let args = arguments;
     if (timer) {
@@ -16,12 +16,7 @@ function debounce(fn, delay) {
 
 function throttle(fn, delay) {
   let timer = null;
-  return function() {
-    if (!timer) {
-      timer = setTimeout(() => {
-        fn();
-        timer = null;
-      }, delay)
-    }
+  return function {
+
   }
 }

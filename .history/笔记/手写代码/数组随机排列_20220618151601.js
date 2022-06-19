@@ -5,7 +5,7 @@ const arrRandom = (arr) => {
 
   for (let i = 0; i < arr.length; ++i) {
     let index = getRandom(arr.length);
-    [arr[i], arr[index]] = [arr[index], arr[i]];
+    +[arr[i], arr[index]] = [arr[index], arr[i]];
   }
 
   return arr;

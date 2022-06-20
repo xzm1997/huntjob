@@ -7,7 +7,7 @@ const debounce = function (fn, delay) {
     }
     let self = this;
     let args = arguments;
-    timer = setTimeout(() => {
+    setTimeout(() => {
       fn().call(self, ...args);
     }, delay)
   } 

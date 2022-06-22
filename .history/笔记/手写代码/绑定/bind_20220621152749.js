@@ -3,9 +3,9 @@ Function.prototype.myBind = function (context) {
 
   let args = [...arguments].slice(1), fn = this;
   return function Fn() {
-    // 判断函数作为构造函数的情况
+    // 判断函数作为构造函数的清空
     return fn.apply(
-      this instanceof Fn ? this : context,
+      this instanceof Fn ? this :context,
       args.concat(...arguments)
     )
   }

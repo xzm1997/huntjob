@@ -72,18 +72,3 @@
     - `Grankshaft`：较为复杂的`JIT`编译器，可以生成高度优化的机器码
 ![字节码编译器](https://raw.githubusercontent.com/DengSongsong/Blogs/master/images/v8/V8%E7%9A%84v5.6%E7%89%88%E4%B9%8B%E5%89%8D%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png)
 - 参考: <a src = "https://juejin.cn/post/6844903953981767688">JavaScript：V8编译过程</a>
-
-# 框架
-## express
-### 中间件
-#### 应用层中间件
-- 应用级中间键绑定到app对象使用app.use和app.METHOD()-需要处理http请求的方法，例如GET、PUT、POST
-#### 路由层中间件
-- 路由级中间件和应用级中间件类似，只不过是它绑定对象为express.Router()
-- 路由级使用router.use()或router.VERB()加载
-#### 错误处理中间件
-- 错误处理中间件有四个参数,定义错误处理中间件必须使用这四个参数。即使不需要next对象，也必须在参数中声明它，否者中间件会识别为一个常规中间件，不能处理错误
-#### 内置中间件
-- express.static是 Express 唯一内置的中间件
-- 基于 serve-static，负责在 Express 应用中提托管静态资源。
-#### 第三方中间件

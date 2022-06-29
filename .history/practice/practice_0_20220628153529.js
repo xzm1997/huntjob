@@ -1,4 +1,4 @@
-new Promise((resolve, reject) => {
+Promise((resolve, reject) => {
   console.log(1);
   throw '2';
 }).catch((err) => {

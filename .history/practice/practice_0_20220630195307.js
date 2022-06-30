@@ -2,6 +2,7 @@ function findMostWord(article) {
   article = article.trim().toLowerCase();
   let wordList = article.split(' ');
   wordList.sort();
+  // console.log(wordList);
   if (wordList.length === 0) return 0;
   let max = 1, word = '', count = 1;
   for (let i = 1; i < wordList.length; ++i) {
@@ -14,6 +15,7 @@ function findMostWord(article) {
     } else {
       count = 1;
     }
+    // console.log(wordList[i], count);
   }
   return word+': '+max;
 }

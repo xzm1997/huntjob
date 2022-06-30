@@ -11,7 +11,7 @@ class myPromise {
     this.resolveList = [];
     this.rejectList = [];
 
-    const resolve = (value) => {
+    let resolve = (value) => {
       // 如果 value 是一个promise，那我们的库中应该也要实现一个递归解析
       if (value instanceof myPromise) {
         return value.then(resolve, reject);
@@ -20,13 +20,13 @@ class myPromise {
       setTimeout(() => {
         this.status = FULFILLED;
         this.value = value;
-        this.resolveList.forEach(callback => {
-          callback(value);
+        this.resolveList.forEach(item => {
+          item(value);
         })
       },0)
     }
 
-    const reject = (reason) => {
+    let reject = (reason) => {
       setTimeout(() => {
         this.status = REJECTED;
         this.reason = reason;

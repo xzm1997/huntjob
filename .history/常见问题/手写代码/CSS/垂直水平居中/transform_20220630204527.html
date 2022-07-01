@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>垂直水平居中</title>
+  <title>垂直水平居中：Flex</title>
   <style>
-    .outer {
+    .outside {
+      width: 400px;
       height: 400px;
-      width: 600px;
-      background: lemonchiffon;
+      background: papayawhip;
       position: relative;
     }
-    .inner {
-      height: 150px;
+    .inside {
       width: 100px;
-      background: paleturquoise;
+      height: 100px;
+      background:lightcyan;
       position: absolute;
+      left: 200px;
+      top: 200px;
+      transform: translate(-50%, -50%);
     }
   </style>
 </head>
 <body>
-  <div class="outer">
-    <div class="inner"></div>
+  <div class="outside">
+    <div class="inside"></div>
   </div>
 </body>
 </html>

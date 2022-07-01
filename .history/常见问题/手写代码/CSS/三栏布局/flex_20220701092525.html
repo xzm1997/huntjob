@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三栏布局</title>
+  <style>
+    .content {
+      display: flex;
+    }
+    .middle {
+      height: 400px;
+      background-color: lavender;
+      flex-grow: 1;
+    }
+    .left {
+      background:lemonchiffon;
+      order: -1;
+      height: 400px;
+      flex: 0 1 200px;
+      margin-right: 10px;
+    }
+    .right {
+      background: lightblue;
+      flex: 0 1 200px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="middle"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

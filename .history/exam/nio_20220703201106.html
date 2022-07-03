@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #paintArea {
+                position: absolute;
+                width: 500px;
+                height: 500px;
+                background-color: #34495e;
+                overflow: hidden;
+            }
+            .box {
+                position: absolute;
+                border-radius: 3px;
+                background-color: #f1c40f;
+                opacity: 0.7;
+                cursor: move;
+            }
+            .rectangle{
+                position: absolute;
+                border-radius: 3px;
+                overflow:hidden;
+                background-color: #f1c40f;
+                opacity: 0.7;
+            }
+        </style>
+    </head>
+    <body>
+    <section id="paintArea"></section>
+
+        <script type="text/javascript">
+            const paintarea = {
+                el: null,
+                startX: 0,
+                startY: 0,
+                gapX: 0,
+                gapY: 0,
+                dragging: false,
+                init(el = null) {
+                    if(!el) return
+                    this.el = el
+                    this.initEvents()
+                },
+                initEvents() {
+                    const _this = this
+                    // TODO: 请给下列三个监听事件添加监听对象
+                    .addEventListener('mousedown', _mousedownHandler)
+                    .addEventListener('mousemove', _mousemoveHandler)
+                    .addEventListener('mouseup', _mouseupHandler)
+
+                    function _mousedownHandler(event) {
+                        _this.mousedownHandler(event)
+                    }
+
+                    function _mousemoveHandler(event) {
+                        _this.mousemoveHandler(event)
+                    }
+
+                    function _mouseupHandler(event) {
+                        _this.mouseuphandler(event)
+                    }
+                },
+                mousedownHandler(event) {
+                    event = event || window.event
+                    event.preventDefault()
+                    event.stopPropagation()
+                    this.startX = event.pageX
+                    this.startY = event.pageY
+                    if(event.target.className.match(/box/)) {
+                        this.dragging = true
+                        if(this.el.querySelector('#moving')) {
+                            this.el.querySelector('#moving').removeAttribute('id')
+                        }
+                        event.target.id = 'moving'
+                        this.gapX = this.startX - event.target.offsetLeft
+                        this.gapY = this.startY - event.target.offsetTop
+                    } else {
+                        const box = document.createElement('div')
+                        box.id = 'active'
+                        box.className = 'rectangle'
+                        // TODO: 完善box的初始坐标赋值，并将该box节点插入绘制模块
+                        
+                    }
+                },
+                mousemoveHandler(event) {
+                    event = event || window.event
+                    event.preventDefault()
+                    event.stopPropagation()
+                    const active = this.el.querySelector('#active')
+                    const moving = this.el.querySelector('#moving')
+                    if(active) {
+                        // TODO: 完善绘制时，被绘制盒子的宽度与高度的计算
+                        
+                    }
+                    if(moving && this.dragging) {
+                        // TODO: 完善拖拽时，被拖拽盒子的位置坐标的计算
+                        
+                    }
+                },
+                mouseuphandler(event) {
+                    event = event || window.event
+                    event.preventDefault()
+                    event.stopPropagation()
+                    this.dragging = false
+                    const active = this.el.querySelector('#active')
+                    if(active) {
+                        active.removeAttribute('id')
+                        active.className = 'box'
+                        if(active.offsetWidth < 5 || active.offsetHeight < 5) {
+                            this.el.removeChild(active)
+                        }
+                    }
+                }
+            }
+            // TODO: 请获取id=paintArea的节点
+            paintarea.init(null)
+        </script>
+    </body>
+</html>

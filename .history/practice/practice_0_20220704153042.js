@@ -1,17 +1,17 @@
-Promise.race = function (iterators) {  
-  return new Promise((resolve,reject) => {
-    for (const p of iterators) {
+Promise.race = function(items) {
+  return new Promise((resolve, reject) => {
+    for (p of items) {
       Promise.resolve(p)
       .then((res) => {
-          resolve(res)
+        resolve(res);
       })
-      .catch(e => {
-          reject(e)
+      .catch((err) => {
+        reject(err);
       })
     }
   })
-
 }
+
 var promise1 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 500, 'one');
 });

@@ -12,7 +12,7 @@ function promiseAll(promises) {
       Promise.resolve(promises[i]).then(value => {
         resolvedCounter++;
         resolvedResult.push(value);
-        if (resolvedCounter === promiseNum) return resolve(resolvedResult);
+        if (resolvedCounter === promiseNum) return resolve(promiseResult);
       }, e => {
         return reject(error);
       })

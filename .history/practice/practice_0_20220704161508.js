@@ -19,10 +19,7 @@ let throttle = function(fn, delay) {
     let context = this;
     let args = arguments;
     if (!timer) {
-      setTimeout(() => {
-        fn().apply(context, args);
-        timer = null;
-      },delay);
+
     }
   }
 }
